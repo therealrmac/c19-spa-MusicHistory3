@@ -2,7 +2,7 @@
 
 *This is my first commit, and I have one other thing to complete on it before it is finished*
 
-###Instructions
+### Instructions
 >In the navigation bar, make sure you have two links labeled "List Music", and "Add Music".
 Add a DOM element that contains some input fields for the user to enter in the name of a song, the artist for the song, and the album. You do not need to enclose them in a <form> element because we're not actually submitting this form anywhere.
 Add a <button> element at the bottom of the input fields labeled "Add".
