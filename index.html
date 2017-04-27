@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+	  <link rel="stylesheet" type="text/css" href="main.css">
+	  <meta charset="utf-8">
+	  <title>Music History</title>
+	</head>
+	<body>
+
+		<h1>Music History</h1>
+		<nav class="mainNav">
+			<ul>
+				<li><a href="#">View Music |</a></li>
+				<li><a href="#" id="musiclist">List Music |</a></li>
+				<li><a href="#" id="showMusicAdd">Add Music |</a></li>
+				<li><a href="#">Profile</a></li>
+			</ul>
+		</nav>
+		<section>
+		<article  id="songSelector">
+			<div >
+				<select name='select' class="buttonContent">
+				<div>Artist:</div>
+					<div class="buttonContent">
+						<option value="artist">Artist</option>
+						<option value="value">The Smiths</option>
+						<option value="value1">Michael Jackson</option>
+						<option value="value2">The Eagles</option>
+						<option value="value3">Megadeth</option>
+						<option value="valu4">Metallica</option>
+						</div>
+						</select>
+					</div>
+			</div>
+		<br>
+		<br>
+			<div >
+				<select name="select" class="buttonContent">
+					<div >
+						<option value="value">Album</option>
+						<option value="value1">The Queen is Dead</option>
+						<option value="value2">Bad</option>
+						<option value="value3">Desperado</option>
+						<option value="value4">Peace Sells...but Who's Buying?</option>
+						<option value="value4">And Justice For All</option>
+						</select>
+					</div>
+			</div>
+			<div id="addMusic" class="hidden">
+			<p>Song:<input type="text" id="enterSong"></p>
+			<p>Artist:<input type="text" id="enterArtist"></p>
+			<p>Album:<input type="text" id="enterAlbum"></p>
+			<button id="addbutton">Add</button>
+			</div>
+		</article>
+		<article class="listentomusic">
+		<div id="listMusicView">
+		</div>
+		</article>
+		</section>
+		<script type="text/javascript" src="songs.js"></script>
+	</body>
+</html>
