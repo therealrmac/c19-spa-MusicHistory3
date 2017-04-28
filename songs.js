@@ -16,33 +16,38 @@ for (prop in songs){
 					</ul>`
 	listMusicView.innerHTML+= songItem;
 }
-
-var buttonAdd= document.getElementById('addButton');
+function newArr(name, artist, album){
+	this.name= name;
+	this.artist= artist;
+	this.album= album;
+}
+var buttonAdd= document.getElementById('addbutton');
 var listMusic= document.getElementById('musiclist');
 var addList= document.getElementById('showMusicAdd');
 var musicAdd= document.getElementById('addMusic');
 var viewList= document.getElementById('listMusicView');
-
+var addSong= document.getElementById('enterSong');
+var addArtist= document.getElementById('enterArtist');
+var addAlbum= document.getElementById('enterAlbum');
 
 addList.addEventListener('click', function(){
-	musicAdd.classList.toggle('visable');
-	viewList.classList.toggle('hidden');
+	musicAdd.classList.remove('hidden');
+	viewList.classList.add('hidden');
 });
 listMusic.addEventListener('click', function(){
-	musicAdd.classList.toggle('visable');
-	viewList.classList.toggle('hidden');
+	musicAdd.classList.add('hidden');
+	viewList.classList.remove('hidden');
 });
 
-buttonAdd.addEventListener('click', music);
+ buttonAdd.addEventListener('click', function(){
+ 	var addedSong= new newArr(addSong.value, addArtist.value, addAlbum.value);
+	listMusicView.innerHTML += "<ul>" + "<li>" + addedSong.name+ "- " +"by " +addedSong.artist + " on the album "+addedSong.album+ "</li>"+ "<br>" + "<span>" +"Song  |  Artist  |  Album" +"</span>" +"</ul>";
+	addSong.value= "";
+	addArtist.value= "";
+	addAlbum.value= "";
+ });
 
-function music(){
-	var addSong= document.getElementById('enterSong');
-	var addArtist= document.getElementById('enterArtist');
-	var addAlbum= document.getElementById('enterAlbum');
-	for (prop in songs){
-	var newSongs= "<ul>"+
-					"<li>" + addSong.value + "- " + addArtist.value+ "- " + addAlbum.value + "</li>"
-					"</ul>";
-		viewList.innerHTML = newSongs;
-	}
-}
+
+	
+
+

@@ -61,7 +61,22 @@ section{
 }
 .hidden{
 	visibility: hidden;
+	visibility: collapse;
 }
-.visable{
-	visibility: visible;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
