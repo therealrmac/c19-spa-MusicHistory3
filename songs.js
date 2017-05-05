@@ -1,21 +1,71 @@
-var songs = [];
-songs[songs.length] = "A !Light That Never Goes Out > by The Smiths on the album The Queen is Dead";
-songs[songs.length] = "Man in The Mirror > by Mich@ael Jackson on the album Bad";
-songs[songs.length] = "Tequilla Sun@rise > by The Eagles on the album Desperado";
-songs[songs.length] = "Wake up Dead > by Mega!deth on the album Peace Sells...but Who's Buying?";
-songs[songs.length] = "Blackened > by Metallica on the al$bum And Justice For All";
-for (var i=0; i<songs.length; i++){
-	songs[i]= songs[i].replace(/[!@?$]/gi, "");
-	songs[i]= songs[i].replace(/> /gi, ' - ');
+
+listMusicView.addEventListener('click', function(event){
+	if(event.target.tagName== "BUTTON" && event.target.innerHTML == "Delete"){
+		getTarget= event.target.closest('div');
+		listMusicView.removeChild(getTarget);
+	}else if(event.target.tagName== "BUTTON" && event.target.innerHTML =="More"){
+		var songs2= new XMLHttpRequest();
+		songs2.addEventListener('load', songsWin);
+		songs2.addEventListener('error', songsFail);
+
+function songsWin(event){
+	var songData= JSON.parse(this.responseText);
+	moreSongs(songData);
+	
 }
-for (prop in songs){
-	var songItem= `<ul>
-					<li>${songs[prop]}</li>
-					<br>
-					<span> Song  |  Artist  |  Album</span>
-					</ul>`
-	listMusicView.innerHTML+= songItem;
+function songsFail(event){
+	console.log("an error has occured");
 }
+
+function moreSongs(event){
+	console.log();
+	var divCont="";
+	var x= event.songTrack;
+		for (var i=0; i<x.length; i++){
+		console.log(x[i].song);
+		divCont+= "<div class='output'>"+
+		"<span>"+ x[i].song+"</span>"+"<br>"+
+				"<span>"+ 'Song    |    Artist    |    Album'+"</span>"+"<button class='delete'>"+'Delete' +"</button>" +"<br>" +"</div>";
+	}
+
+	listMusicView.innerHTML+= divCont;
+}
+
+songs2.open("GET", "song2.json");
+songs2.send();
+	var x=event.target.closest('button')
+	listMusicView.removeChild(x);		
+	}
+
+});
+
+var songs= new XMLHttpRequest();
+var songData;
+songs.addEventListener('load', songsLoad);
+songs.addEventListener('error', songsError);
+
+
+function songsLoad(event){
+	var newsong= JSON.parse(event.target.responseText)
+	showSong(newsong);
+}
+function showSong(event){
+	var divCont="";
+	var x= event.songTrack;
+	for (var i=0; i<x.length; i++){
+		console.log(x[i].song);
+		divCont+= "<div class='output'>"+
+		"<span>"+ x[i].song+"</span>"+"<br>"+
+				"<span>"+ 'Song    |    Artist    |    Album'+"</span>"+"<button class='delete'>"+'Delete' +"</button>" +"<br>" +"</div>";
+	}
+
+	listMusicView.innerHTML+= divCont + "<button>"+ 'More'+ "</button>";
+}
+function songsError(event){
+	console.log("an error has occured");
+}
+songs.open("GET", "song.json");
+songs.send();
 function newArr(name, artist, album){
 	this.name= name;
 	this.artist= artist;
@@ -41,7 +91,7 @@ listMusic.addEventListener('click', function(){
 
  buttonAdd.addEventListener('click', function(){
  	var addedSong= new newArr(addSong.value, addArtist.value, addAlbum.value);
-	listMusicView.innerHTML += "<ul>" + "<li>" + addedSong.name+ "- " +"by " +addedSong.artist + " on the album "+addedSong.album+ "</li>"+ "<br>" + "<span>" +"Song  |  Artist  |  Album" +"</span>" +"</ul>";
+	listMusicView.innerHTML += "<div>"+"<ul>" + "<li>" + addedSong.name+ "- " +"by " +addedSong.artist + " on the album "+addedSong.album+ "</li>"+ "<br>" + "<span>" +"Song  |  Artist  |  Album" +"</span>" +"<button class='delete'>"+'Delete'+"</button>" +"</ul>"+"</div>";
 	addSong.value= "";
 	addArtist.value= "";
 	addAlbum.value= "";

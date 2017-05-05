@@ -53,6 +53,13 @@ section{
 	font-size: 1.15em;
 	line-height: 55px;
 }
+.output{
+	list-style: none;
+	display: inline;
+	padding: 10px 10px;
+	font-size: 1.15em;
+	line-height: 55px;
+}
 #addMusic{
 	width: 35%;
 }
