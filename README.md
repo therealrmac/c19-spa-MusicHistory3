@@ -1,6 +1,6 @@
 # Music History 3 spa
 
-*This is my first commit, and I have one other thing to complete on it before it is finished*
+*Upadte to the nav bar, I think this will work for a final app*
 
 ### Instructions
 >In the navigation bar, make sure you have two links labeled "List Music", and "Add Music".
