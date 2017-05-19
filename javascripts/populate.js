@@ -1,9 +1,7 @@
-
-var Evenmore= (function(songs){
-
+"use strict";
 
 
-    songs.populatePage1= function(songData){
+let populatePage2= function(songData){
         var divCont="";
         var x= songData;
         for (var i=0; i<x.length; i++){
@@ -13,11 +11,11 @@ var Evenmore= (function(songs){
                     "<span>"+ 'Song    |    Artist    |    Album'+"</span>"+"<button class='delete'>"+'Delete' +"</button>" +"<br>" +"</div>";
                 }
 
-            viewList.html(divCont + "<button>"+ 'More'+ "</button>") 
-        }
+            viewList.html(divCont + "<button>"+ 'More'+ "</button>"); 
+        };
 
 
-    songs.populatePage2= function(songData){
+let populatePage1= function(songData){
             var divCont="";
             var x= songData;
                 for (var i=0; i<x.length; i++){
@@ -29,7 +27,10 @@ var Evenmore= (function(songs){
                 
                  }
                 viewList.html(divCont+=divCont);
-            }
-    return songs;
-})(Evenmore || {})
+            };
+
+
+
+module.exports= {populatePage1, populatePage2};
+
 

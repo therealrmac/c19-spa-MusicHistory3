@@ -1,6 +1,9 @@
+"use strict";
 
+let populate= require("./populate");
+let loadsongJson= require("./more");
 
-Evenmore.loadSongs1(Evenmore.populatePage1)
+populate.songData1(populatePage2);
 
 function newArr(name, artist, album){
 	this.name= name;
@@ -21,8 +24,8 @@ viewList.on('click', function(event){
 		getTarget= event.target.closest('div');
 		listMusicView.removeChild(getTarget);
 	}else if(event.target.tagName== "BUTTON" && event.target.innerHTML =="More"){
-	Evenmore.loadSongs2(Evenmore.populatePage2);
-	var x= $(event.target).closest('button')
+	populate.loadSongs2(populatePage2);
+	var x= $(event.target).closest('button');
 	 x.remove();		
 	}
 
