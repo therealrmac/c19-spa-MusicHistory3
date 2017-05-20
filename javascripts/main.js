@@ -1,14 +1,15 @@
 "use strict";
 
-let populate= require("./populate");
-let loadsongJson= require("./more");
+let songList= require("./populate");
+let songList2= require("./populateTwo");
+let ajaxLoad= require("./more");
 
-populate.songData1(populatePage2);
+songList.load();
 
 function newArr(name, artist, album){
-	this.name= name;
-	this.artist= artist;
-	this.album= album;
+	name.target.name= name;
+	artist.target.artist= artist;
+	album.target.album= album;
 }
 var buttonAdd= $('#addbutton');
 var listMusic= $('#musiclist');
@@ -20,11 +21,12 @@ var addArtist= $('#enterArtist');
 var addAlbum= $('#enterAlbum');
 var inputed="";
 viewList.on('click', function(event){
+	console.log("event", event);
 	if(event.target.tagName== "BUTTON" && event.target.innerHTML == "Delete"){
-		getTarget= event.target.closest('div');
-		listMusicView.removeChild(getTarget);
+		let getTarget= event.target.closest('div');
+		viewList.removeChild(getTarget);
 	}else if(event.target.tagName== "BUTTON" && event.target.innerHTML =="More"){
-	populate.loadSongs2(populatePage2);
+	songList2.load();
 	var x= $(event.target).closest('button');
 	 x.remove();		
 	}
@@ -42,7 +44,7 @@ listMusic.on('click', function(){
 
  buttonAdd.on('click', function(){
  	var addedSong= new newArr(addSong.val(), addArtist.val(), addAlbum.val());
-	 listMusicView.innerHTML+="<div class='output'>"+"<span>" + addedSong.name+ "- " +"by " +addedSong.artist + " on the album "+addedSong.album+ "</span>"+ "<br>" + "<span>" +"Song  |  Artist  |  Album" +"</span>" +"<button class='delete'>"+'Delete'+"</button>"+"</div>";
+	 viewList.innerHTML+="<div class='output'>"+"<span>" + addedSong.name+ "- " +"by " +addedSong.artist + " on the album "+addedSong.album+ "</span>"+ "<br>" + "<span>" +"Song  |  Artist  |  Album" +"</span>" +"<button class='delete'>"+'Delete'+"</button>"+"</div>";
 	 
 	addSong.val("");
 	addArtist.val("");

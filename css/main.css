@@ -1,0 +1,73 @@
+body {
+  font-family: "Helvetica", sans-serif;
+  background-color: lightblue; }
+
+.mainNav {
+  background-color: #ffb48b;
+  padding: 10px 10px; }
+
+.mainNav li {
+  list-style: none;
+  display: inline;
+  padding: 15px 15px; }
+
+.mainNav li a {
+  display: inline;
+  text-decoration: none;
+  list-style: none;
+  padding: 20px 20px; }
+
+section {
+  display: flex; }
+
+#songSelector {
+  border: 2px solid;
+  background-color: #4dd7fa;
+  height: 500px;
+  max-width: 180px;
+  padding: 10px 10px;
+  position: relative;
+  left: 1%;
+  margin-top: 50px; }
+
+.buttonContent {
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px black;
+  z-index: 1;
+  max-width: 100px; }
+
+.listentomusic {
+  border: 2px solid;
+  background-color: #ffffe0;
+  max-width: 100%;
+  padding: 30px 30px;
+  max-height: 100%;
+  position: relative;
+  left: 10%;
+  margin-top: 50px; }
+
+.listentomusic li {
+  list-style: none;
+  display: inline;
+  padding: 10px 10px;
+  font-size: 1.15em;
+  line-height: 55px; }
+
+.output {
+  list-style: none;
+  display: inline;
+  padding: 10px 10px;
+  font-size: 1.15em;
+  line-height: 55px; }
+
+#addMusic {
+  width: 35%; }
+
+#addbutton {
+  width: 100%; }
+
+.hidden {
+  visibility: hidden;
+  visibility: collapse; }
+
+/*# sourceMappingURL=main.css.map */

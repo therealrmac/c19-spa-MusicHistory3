@@ -1,6 +1,6 @@
 # Music History 5 Modern Javascript Developer
 
-*First commit/upload just as a place holder*
+*App has been browserified, I'll be doing the rest of the requirements later*
 
 
 ## Requirements
