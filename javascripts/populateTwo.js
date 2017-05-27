@@ -2,7 +2,7 @@
 
 let ajaxLoad= require("./more");
 let mainItems= require("./main");
-var viewList= $('#listMusicView');
+let firstList= require("./populate");
 
 let populateObjTwo= {};
 
@@ -25,7 +25,7 @@ populateObjTwo.write= function(data){
 
                 
                  }
-                viewList.html(divCont+=divCont);
+                $("#listMusicView").html(firstList+=divCont);
 
 };
 

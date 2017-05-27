@@ -1,19 +1,52 @@
 {
 	"songTrack":[
 	 {
-	 	"song": "A Light That Never Goes Out - by The Smiths on the album The Queen is Dead"
+	 	"title": "A Light That Never Goes Out",
+	 	"artist": "The Smiths",
+	 	"album":"The Queen is Dead",
+	 	"genre": "alternative-rock"
 	 },
 	 {
-	 	"song": "Man in the Mirror - by Michael Jackson on the album Bad"
+	 	"title": "Man in the Mirror",
+	 	"artist": "Michael Jackson",
+	 	"album": "Bad",
+	 	"genre": "pop"
 	 },
 	 {
-	 	"song": "Tequilla Sunrise - by The Eagles on the album Desperado"
+	 	"title": "Tequilla Sunrise",
+	 	"artist": "The Eagles",
+	 	"album" :"Desperado",
+	 	"genre": "folk Rock"
 	 },
 	 {
-	 	"song": "Wake up Dead - by Megadeth on the album Peace Sells...But Who's Buying?"
+	 	"title": "Wake up Dead",
+	 	"artist": "Megadeth", 
+	 	"album": "Peace Sells...But Who's Buying?",
+	 	"genre": "Metal"
 	 },
 	 {
-	 	"song": "Blackened - by Metallics on the album And Justice For All"
+	 	"title": "Blackened",
+	 	"artist":"Metallica",
+	 	"album": "And Justice For All",
+	 	"genre": "Metal"
+	 },
+	 {
+	 	"title": "Hangar 18",
+	 	"artist": "Megadeth", 
+	 	"album": "Rust in Peace",
+	 	"genre": "Metal"
+	 },
+	 {
+	 	"title": "One",
+	 	"artist":"Metallica",
+	 	"album": "And Justice For All",
+	 	"genre": "Metal"
+	 },
+	 {
+	 	"title": "Master of Puppets",
+	 	"artist":"Metallica",
+	 	"album": "Master of Puppets",
+	 	"genre": "Metal"
 	 }
 	]
 }

@@ -1,4 +1,4 @@
-# Music History 5 Modern Javascript Developer
+# Music History 6 Modern Javascript Developer
 
 *App has been browserified, I'll be doing the rest of the requirements later*
 

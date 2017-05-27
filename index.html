@@ -3,6 +3,7 @@
 
 <html lang="en">
 	<head>
+	  <link rel="stylesheet" href="lib/node_modules/bootstrap/dist/css/bootstrap.css">
 	  <link rel="stylesheet" type="text/css" href="css/main.css">
 	  <meta charset="utf-8">
 	  <title>Music History</title>
@@ -19,15 +20,15 @@
 		<section>
 		<article  id="songSelector">
 			<div >
-				<select name='select' class="buttonContent">
+				<select name='select' id="artistSelect" class="buttonContent megadeth metallica michael eagle">
 				<div>Artist:</div>
 					<div class="buttonContent">
-						<option value="artist">Artist</option>
-						<option value="value">The Smiths</option>
-						<option value="value1">Michael Jackson</option>
-						<option value="value2">The Eagles</option>
-						<option value="value3">Megadeth</option>
-						<option value="valu4">Metallica</option>
+						<option  value="artist">Artist</option>
+						<option class="smith" value="The Smiths">The Smiths</option>
+						<option class="michael" value="Michael Jackson">Michael Jackson</option>
+						<option class="eagle" value="The Eagles">The Eagles</option>
+						<option class="megadeth" value="Megadeth">Megadeth</option>
+						<option class="metallica" value="Metallica">Metallica</option>
 						</div>
 						</select>
 					</div>
@@ -35,17 +36,24 @@
 		<br>
 		<br>
 			<div >
-				<select name="select" class="buttonContent">
+				<select name="select" id="albumSelect" class="buttonContent">
 					<div >
 						<option value="value">Album</option>
-						<option value="value1">The Queen is Dead</option>
-						<option value="value2">Bad</option>
-						<option value="value3">Desperado</option>
-						<option value="value4">Peace Sells...but Who's Buying?</option>
-						<option value="value4">And Justice For All</option>
+						<option value="The Queen is Dead">The Queen is Dead</option>
+						<option value="Bad">Bad</option>
+						<option value="Desperado">Desperado</option>
+						<option value="Peace Sells...but Who's Buying?">Peace Sells...but Who's Buying?</option>
+						<option value="And Justice For All">And Justice For All</option>
 						</select>
 					</div>
 			</div>
+			<br>
+			<div id="filter">
+				<span>Song</span>
+				<input type="text" id="song">
+			</div>
+			<br>
+			<button id="filterButton" class="btn btn-info">Filter</button>
 			<div id="addMusic" class="hidden">
 			<p>Song:<input type="text" id="enterSong"></p>
 			<p>Artist:<input type="text" id="enterArtist"></p>
@@ -55,11 +63,12 @@
 		</article>
 		<article class="listentomusic">
 		<div id="listMusicView">
+		    <div class="uiContainer row">
+      <section class="uiContainer--wrapper col s9">
 		</div>
 		</article>
 		</section>
 
-		<script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.js"></script>
 		<script type="text/javascript" src="dist/app.js"></script>
 	</body>
 </html>
