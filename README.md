@@ -1,6 +1,6 @@
 # Music History 6 Modern Javascript Developer
 
-*Changed app to run from firebase, can add and delete songs, workign on the filter now*
+*App works and I think it may also include the requirement for version 7 as well*
 
 
 ## Requirements

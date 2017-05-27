@@ -44,7 +44,7 @@ function smithToDom(){
 			songList.makeSongList(songData);
 	});
 }
-function micahelToDom(){
+function michaelToDom(){
 	al.michael()
 	.then(function(songData){
 		console.log("some data", songData);
@@ -100,6 +100,79 @@ function metallicaToDom(){
 			songList.makeSongList(songData);
 	});
 }
+
+function smithAlbumToDom(){
+	al.smithsAlbum()
+	.then(function(songData){
+		console.log("some data", songData);
+		var idArray= Object.keys(songData);
+		var songArray=[];
+		idArray.forEach(function(key){
+			songData[key].id=key;
+			songArray.push(songData[key]);
+		});
+			console.log("song object now with an id", songData);
+			songList.makeSongList(songData);
+	});
+}
+function michaelAlbumToDom(){
+	al.michaelAlbum()
+	.then(function(songData){
+		console.log("some data", songData);
+		var idArray= Object.keys(songData);
+		var songArray=[];
+		idArray.forEach(function(key){
+			songData[key].id=key;
+			songArray.push(songData[key]);
+		});
+			console.log("song object now with an id", songData);
+			songList.makeSongList(songData);
+	});
+}
+function eaglesAlbumToDom(){
+	al.eaglesAlbum()
+	.then(function(songData){
+		console.log("some data", songData);
+		var idArray= Object.keys(songData);
+		var songArray=[];
+		idArray.forEach(function(key){
+			songData[key].id=key;
+			songArray.push(songData[key]);
+		});
+			console.log("song object now with an id", songData);
+			songList.makeSongList(songData);
+	});
+}
+function megadethAlbumToDom(){
+	al.megadethAlbum()
+	.then(function(songData){
+		console.log("some data", songData);
+		var idArray= Object.keys(songData);
+		var songArray=[];
+		idArray.forEach(function(key){
+			songData[key].id=key;
+			songArray.push(songData[key]);
+		});
+			console.log("song object now with an id", songData);
+			songList.makeSongList(songData);
+	});
+}
+function metallicaAlbumToDom(){
+	al.metallicaAlbum()
+	.then(function(songData){
+		console.log("some data", songData);
+		var idArray= Object.keys(songData);
+		var songArray=[];
+		idArray.forEach(function(key){
+			songData[key].id=key;
+			songArray.push(songData[key]);
+		});
+			console.log("song object now with an id", songData);
+			songList.makeSongList(songData);
+	});
+}
+
+
 $(document).on("click", ".delete-btn", function (event){
 	console.log("delete button clicked");
 	let songID= $(this).data("delete-id");
@@ -129,27 +202,28 @@ $(document).on('click', "#addbutton", function(event){
 $(document).on("change", "#artistSelect", function(event){
 	let selected= $(this).find("option:selected");
 	console.log("the selected was", selected.text());
-	if(selected.text("The Smiths")){
+	console.log("testing", selected.text());
+	if(selected.text()==="The Smiths"){
 		al.smiths()
 		.then(function(event){
 			smithToDom();
 		});
-	} else if(selected.text("Michael Jackson")){
+	} else if(selected.text()==="Michael Jackson"){
 		al.michael()
 		.then(function(event){
-			micahelToDom();
+			michaelToDom();
 		});
-	} else 	if(selected.text("The Eagles")){
+	} else 	if(selected.text()==="The Eagles"){
 		al.eagles()
 		.then(function(event){
 			eaglesToDom();
 		});
-	} else 	if(selected.text("Megadeth")){
+	} else 	if(selected.text()==="Megadeth"){
 		al.megadeth()
 		.then(function(event){
 			megadethToDom();
 		});
-	} else if(selected.text("Metallica")){
+	} else if(selected.text()==="Metallica"){
 		al.metallica()
 		.then(function(event){
 			metallicaToDom();
@@ -157,6 +231,37 @@ $(document).on("change", "#artistSelect", function(event){
 	}
 });
 
+$(document).on("change", "#albumSelect", function(event){
+	let selected= $(this).find("option:selected");
+	console.log("the selected album was", selected.text());
+	console.log("testing", selected.text());
+	if(selected.text()==="The Queen is Dead"){
+		al.smithsAlbum()
+		.then(function(event){
+			smithAlbumToDom();
+		});
+	} else if(selected.text()==="Bad"){
+		al.michaelAlbum()
+		.then(function(event){
+			michaelAlbumToDom();
+		});
+	} else 	if(selected.text()==="Desperado"){
+		al.eaglesAlbum()
+		.then(function(event){
+			eaglesAlbumToDom();
+		});
+	} else 	if(selected.text()==="Peace Sells...but Who's Buying?"){
+		al.megadethAlbum()
+		.then(function(event){
+			megadethAlbumToDom();
+		});
+	} else if(selected.text()==="And Justice For All"){
+		al.metallicaAlbum()
+		.then(function(event){
+			metallicaAlbumToDom();
+		});
+	}
+});
 
 
 function buildSongObj(){

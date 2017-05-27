@@ -4,7 +4,7 @@ let $= require("jquery");
 
 function makeSongList(songList) {
   let $songsDisplay =
-  $(`<div class="uiContainer__song-list box col s12">
+  $(`<div class="uiContainer__song-list box col-lg-4">
     <ul class="song-list">
     </ul>
   </div>`);

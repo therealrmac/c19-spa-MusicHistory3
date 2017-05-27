@@ -88,6 +88,82 @@ let $= require("jquery"),
 			});
 		});
 	}
+
+	function smithsAlbum(callback){
+		return new Promise((resolve, reject)=>{
+			$.ajax({
+				url: `${firebase.getFBsettings().databaseURL}/songTrack.json`
+			}).done(function(songData){
+				for (var obj in songData){
+					if(songData[obj].album !="The Queen is Dead"){
+						console.log(songData[obj].album);
+						delete songData[obj];
+					}
+				}
+				resolve(songData);
+			});
+		});
+	}
+	function michaelAlbum(callback){
+		return new Promise((resolve, reject)=>{
+			$.ajax({
+				url: `${firebase.getFBsettings().databaseURL}/songTrack.json`
+			}).done(function(songData){
+				for (var obj in songData){
+					if(songData[obj].album !="Bad"){
+						console.log(songData[obj].album);
+						delete songData[obj];
+					}
+				}
+				resolve(songData);
+			});
+		});
+	}
+	function eaglesAlbum(callback){
+		return new Promise((resolve, reject)=>{
+			$.ajax({
+				url: `${firebase.getFBsettings().databaseURL}/songTrack.json`
+			}).done(function(songData){
+				for (var obj in songData){
+					if(songData[obj].album !="Desperado"){
+						console.log(songData[obj].album);
+						delete songData[obj];
+					}
+				}
+				resolve(songData);
+			});
+		});
+	}
+	function megadethAlbum(callback){
+		return new Promise((resolve, reject)=>{
+			$.ajax({
+				url: `${firebase.getFBsettings().databaseURL}/songTrack.json`
+			}).done(function(songData){
+				for (var obj in songData){
+					if(songData[obj].album !="Peace Sells...but Who's Buying?"){
+						console.log(songData[obj].album);
+						delete songData[obj];
+					}
+				}
+				resolve(songData);
+			});
+		});
+	}
+	function metallicaAlbum(callback){
+		return new Promise((resolve, reject)=>{
+			$.ajax({
+				url: `${firebase.getFBsettings().databaseURL}/songTrack.json`
+			}).done(function(songData){
+				for (var obj in songData){
+					if(songData[obj].album !="And Justice For All"){
+						console.log(songData[obj].album);
+						delete songData[obj];
+					}
+				}
+				resolve(songData);
+			});
+		});
+	}
 	function deleteSong(songId){
 		return new Promise((resolve, reject)=>{
 			console.log("the song id is", songId);
@@ -124,4 +200,4 @@ let $= require("jquery"),
 		});
 	}
 
-module.exports= {loadSongs1, loadSongs2, deleteSong, addSong, smiths, megadeth, eagles, michael, metallica};
+module.exports= {loadSongs1, loadSongs2, deleteSong, addSong, smiths, megadeth, eagles, michael, metallica, smithsAlbum, michaelAlbum, eaglesAlbum, megadethAlbum, metallicaAlbum};
