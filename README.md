@@ -1,6 +1,6 @@
 # Music History 6 Modern Javascript Developer
 
-*App has been browserified, I'll be doing the rest of the requirements later*
+*Changed app to run from firebase, can add and delete songs, workign on the filter now*
 
 
 ## Requirements
