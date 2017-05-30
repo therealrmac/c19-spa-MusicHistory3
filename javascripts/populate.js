@@ -4,18 +4,18 @@ let $= require("jquery");
 
 function makeSongList(songList) {
   let $songsDisplay =
-  $(`<div class="uiContainer__song-list box col-lg-4">
+  $(`<div class="uiContainer__song-list box">
     <ul class="song-list">
     </ul>
   </div>`);
   $("#listMusicView").html($songsDisplay);
   for (let song in songList ) {
     let currentSong = songList[song],
-        songListItem = $("<br>"+ "<li>", {class: "song list-inline"}),
-        title = $("<span/>", {class: "song-title"}).text(currentSong.title),
-        songListData = $("<ul/>", {class: "song list-inline"}),
+        songListItem = $("<br>"+ "<li>", {class: "song list-inline col-md-4"}),
+        title = $("<span/>", {class: "song-title col-md-4"}).text(currentSong.title),
+        songListData = $("<ul/>", {class: "song list-inline col-md-4"}),
         //songListEdit = $("<a>", {"data-edit-id": song, class: "edit-btn btn btn-warning", text: "edit" }),
-        songListDelete = $("<a>", {"data-delete-id": song, class: "delete-btn btn btn-primary", text: "delete " });
+        songListDelete = $("<a>", {"data-delete-id": song, class: "delete-btn btn btn-primary col-sm-2", text: "delete " });
         // Same as `<a id="${song}" class="delete-btn waves-effect waves-light btn">delete</a>`
 
     songListData.append(

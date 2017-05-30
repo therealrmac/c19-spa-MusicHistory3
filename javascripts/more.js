@@ -140,7 +140,7 @@ let $= require("jquery"),
 				url: `${firebase.getFBsettings().databaseURL}/songTrack.json`
 			}).done(function(songData){
 				for (var obj in songData){
-					if(songData[obj].album !="Peace Sells...but Who's Buying?"){
+					if(songData[obj].album !="Peace Sells...But Who's Buying?"){
 						console.log(songData[obj].album);
 						delete songData[obj];
 					}

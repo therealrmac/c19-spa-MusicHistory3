@@ -250,7 +250,7 @@ $(document).on("change", "#albumSelect", function(event){
 		.then(function(event){
 			eaglesAlbumToDom();
 		});
-	} else 	if(selected.text()==="Peace Sells...but Who's Buying?"){
+	} else 	if(selected.text()==="Peace Sells...But Who's Buying?"){
 		al.megadethAlbum()
 		.then(function(event){
 			megadethAlbumToDom();

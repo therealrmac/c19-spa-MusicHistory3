@@ -347,7 +347,7 @@ $(document).on("change", "#albumSelect", function(event){
 		.then(function(event){
 			eaglesAlbumToDom();
 		});
-	} else 	if(selected.text()==="Peace Sells...but Who's Buying?"){
+	} else 	if(selected.text()==="Peace Sells...But Who's Buying?"){
 		al.megadethAlbum()
 		.then(function(event){
 			megadethAlbumToDom();
@@ -529,7 +529,7 @@ let $= require("jquery"),
 				url: `${firebase.getFBsettings().databaseURL}/songTrack.json`
 			}).done(function(songData){
 				for (var obj in songData){
-					if(songData[obj].album !="Peace Sells...but Who's Buying?"){
+					if(songData[obj].album !="Peace Sells...But Who's Buying?"){
 						console.log(songData[obj].album);
 						delete songData[obj];
 					}
@@ -598,18 +598,18 @@ let $= require("jquery");
 
 function makeSongList(songList) {
   let $songsDisplay =
-  $(`<div class="uiContainer__song-list box col-lg-4">
+  $(`<div class="uiContainer__song-list box">
     <ul class="song-list">
     </ul>
   </div>`);
   $("#listMusicView").html($songsDisplay);
   for (let song in songList ) {
     let currentSong = songList[song],
-        songListItem = $("<br>"+ "<li>", {class: "song list-inline"}),
-        title = $("<span/>", {class: "song-title"}).text(currentSong.title),
-        songListData = $("<ul/>", {class: "song list-inline"}),
+        songListItem = $("<br>"+ "<li>", {class: "song list-inline col-md-4"}),
+        title = $("<span/>", {class: "song-title col-md-4"}).text(currentSong.title),
+        songListData = $("<ul/>", {class: "song list-inline col-md-4"}),
         //songListEdit = $("<a>", {"data-edit-id": song, class: "edit-btn btn btn-warning", text: "edit" }),
-        songListDelete = $("<a>", {"data-delete-id": song, class: "delete-btn btn btn-primary", text: "delete " });
+        songListDelete = $("<a>", {"data-delete-id": song, class: "delete-btn btn btn-primary col-sm-2", text: "delete " });
         // Same as `<a id="${song}" class="delete-btn waves-effect waves-light btn">delete</a>`
 
     songListData.append(
